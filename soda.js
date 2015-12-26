@@ -1,3 +1,4 @@
+//initializing soda-js and testing a query pull from a dataset.
 var soda = require('soda-js');
 
 // console.log(soda);
@@ -15,6 +16,8 @@ console.log(consumer);
 console.log(query);
 
 
+
+//example I found online for soda-js. Using as a reference for my test.
 
 // var consumer = new soda.Consumer('open.whitehouse.gov');
 
