@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 var server = app.listen(4567, function () {
 	var host = server.address().address;
 	var port = server.address().port;
-
+	
 	console.log('Testing app listneing on http://%s:%s', host, port);
 });
 
