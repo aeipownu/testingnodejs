@@ -9,7 +9,9 @@
   "dependencies": {
     "ejs": "2.3.3",
     "express": "4.13.3",
-    "soda-js": "0.2.2"
+    "soda-js": "0.2.2",
+    "geoip-lite": "1.1.6",
+    "pg": "4.4.3"
   },
   "engines": {
     "node": "0.12.7"
