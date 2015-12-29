@@ -53,10 +53,39 @@ app.get('/', function (req, res) {
 				//sets keys to bar columns: X AXIS
 				//sets values to number of calls: Y AXIS
 				//arrays are needed for chartist graphs.
-				for (var item in counts) {
-					clearance_group.push("'" + item.replace(/,/g , " ") + "'");
-					number_of_calls.push(counts[item])
+
+				// for (var item in counts) {
+				// 	clearance_group.push("'" + item.replace(/,/g , " ") + "'");
+				// 	number_of_calls.push(counts[item])
+				// }
+
+				//mapping to array
+				var tuples = [];
+
+				for (var key in counts) tuples.push([key, counts[key]]);
+
+				//sorting function
+				tuples.sort(function(a, b) {
+				    a = a[1];
+				    b = b[1];
+
+				    return a < b ? -1 : (a > b ? 1 : 0);
+				});
+
+				//only assigning 15 values for chartist
+				for (var i = 0; i < tuples.length; i++) {
+					if (i <= (tuples.length - 16)) {
+						console.log("skip");
+						continue;
+					}
+				    var key = tuples[i][0];
+				    var value = tuples[i][1];
+
+				  	clearance_group.push("'" + key.replace(/,/g , " ") + "'");
+				  	number_of_calls.push(value)
+
 				}
+
 				//array = ['hi', 'test']
 				//console.log(clearance_group);
 				res.render('chart', { clearance_group: clearance_group, number_of_calls: number_of_calls});
