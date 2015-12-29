@@ -9,7 +9,7 @@ html(lang="en")
     style
       include style.css
   body
-    h1 Crimes in Seattle Today by Category
+    h1 Top 15 Crimes in Seattle Today by Category
     .ct-chart
     script.
       new Chartist.Bar('.ct-chart', {
@@ -18,7 +18,3 @@ html(lang="en")
       }, {
       distributeSeries: true
       });
-    p= clearance_group
-    p= number_of_calls
-
-    p I'm not sure why this is breaking in the middle. I will have to figure it out later. I think it has something to do with the colors running out in the original CSS files. I don't think Chartist was ready for this many groups. There were 15 colors in the original CSS file and 15 names of the series. This is exactly where it is breaking on screen. As to why the colors start back up at the end of the chart I don't know. 
