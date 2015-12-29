@@ -1,6 +1,6 @@
 // code copied from github pg github page. Routed to my database.
 var pg = require('pg');
-var conString = "postgres://magiolitti:Giolitti41@mgtech.c8bdgothc2ef.us-west-2.rds.amazonaws.com/mgtech";
+var conString = "postgres://user:password@server/database";
 
 //this initializes a connection pool
 //it will keep idle connections open for a (configurable) 30 seconds
