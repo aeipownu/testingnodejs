@@ -5,7 +5,8 @@ var app = express();
 var soda = require('soda-js');
 //connection to data
 var consumer = new soda.Consumer('data.seattle.gov');
-
+//set port
+app.set('port', (process.env.PORT || 5000));
 //set engine to render jade files. 
 app.set('view engine', 'jade');
 
@@ -64,7 +65,7 @@ app.get('/', function (req, res) {
 });
 
 //Creating local host to display page.
-var server = app.listen(4567, function () {
+var server = app.listen(app.get('port'), function () {
 	var host = server.address().address;
 	var port = server.address().port;
 	
