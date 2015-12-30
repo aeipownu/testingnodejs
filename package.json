@@ -13,7 +13,7 @@
     "pg": "^4.4.3",
     "soda-js": "^0.2.2",
     "chartist": "0.9.5",
-    geoip-lite: "1.1.6"
+    "geoip-lite": "1.1.6"
   },
   "engines": {
     "node": "4.2.4",
