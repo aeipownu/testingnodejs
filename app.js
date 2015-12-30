@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
 	// store the values pulled in this array.
 	var values = [];
 	// get todays date.
-	var current_date = new Date();
+	var offset = -8;
+	var current_date = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, "" );
 	//dictonary/hash/map of key values.
 	var counts = {};
 	var clearance_group = [];
