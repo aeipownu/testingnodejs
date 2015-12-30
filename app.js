@@ -82,12 +82,13 @@ app.get('/', function (req, res) {
 				    var value = tuples[i][1];
 
 				  	clearance_group.push("'" + key.replace(/,/g , " ") + "'");
-				  	number_of_calls.push(value)
+				  	number_of_calls.push(value);
 
 				}
 
 				//array = ['hi', 'test']
-				//console.log(clearance_group);
+				console.log(number_of_calls);
+				console.log(clearance_group);
 				res.render('chart', { clearance_group: clearance_group, number_of_calls: number_of_calls});
 			})
     		.on('error', function(error) { console.error(error); });
