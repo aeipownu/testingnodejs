@@ -27,6 +27,7 @@ app.get('/', function (req, res) {
 	var where = "event_clearance_date > '"+ current_date.getFullYear() 
 					+ '-' + (current_date.getMonth() + 1) + '-' + 
 					(current_date.getDate() - 1) + "T23:59:59'";
+	console.log(where);
 	//query the data and set arrays for graph
 	var query = consumer.query()
 		.withDataset('3k2p-39jp')
