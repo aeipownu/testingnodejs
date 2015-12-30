@@ -19,14 +19,14 @@ app.get('/', function (req, res) {
 	//dictonary/hash/map of key values.
 	var counts = {};
 	var clearance_group = [];
-	var number_of_calls = []
+	var number_of_calls = [];
 	//columns to pull
-	var select = 'event_clearance_group'
+	var select = 'event_clearance_group';
 	//filter to AFTER yesterdays mightnight(11:59:59 PM)
 	//to ensure all data from today is grabbed
 	var where = "event_clearance_date > '"+ current_date.getFullYear() 
 					+ '-' + (current_date.getMonth() + 1) + '-' + 
-					(current_date.getDate() - 1) + "T23:59:59'"
+					(current_date.getDate() - 1) + "T23:59:59'";
 	//query the data and set arrays for graph
 	var query = consumer.query()
 		.withDataset('3k2p-39jp')
