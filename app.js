@@ -26,9 +26,12 @@ app.get('/', function (req, res) {
 	var select = 'event_clearance_group';
 	//filter to AFTER yesterdays mightnight(11:59:59 PM)
 	//to ensure all data from today is grabbed
+	//0 + slice(-2) is to get data on single digit days. 
+	// query requires 01 for the first of the month...etc
 	var where = "event_clearance_date > '"+ current_date.getFullYear() 
-					+ '-' + (current_date.getMonth() + 1) + '-' + 
-					(current_date.getDate() - 1) + "T23:59:59'";
+					+ '-' + ('0' + (current_date.getMonth() + 1)).slice(-2) + '-' + 
+					('0' + (current_date.getDate() - 1)).slice(-2) + "T23:59:59'";
+
 	console.log(where);
 	//query the data and set arrays for graph
 	var query = consumer.query()
